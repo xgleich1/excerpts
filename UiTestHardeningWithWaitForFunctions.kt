@@ -1,5 +1,3 @@
-package com.dg.eqs
-
 import android.content.Intent
 import androidx.test.espresso.ViewInteraction
 import androidx.test.espresso.intent.Intents.intended
