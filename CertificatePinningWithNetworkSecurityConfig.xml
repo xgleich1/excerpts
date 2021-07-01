@@ -1,0 +1,22 @@
+<!-- Simple certificate pinning with a minSdk >= 24 -->
+
+<application
+    android:networkSecurityConfig="@xml/network_security_config">
+
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+
+    <domain-config>
+        <domain includeSubdomains="false">domain.de</domain>
+        <pin-set>
+            <!-- Reason for using the certificate. -->
+            <!-- Certificate expiring date. -->
+            <pin digest="SHA-256">Pin SHA256</pin>
+
+            <!-- Reason for using the certificate. -->
+            <!-- Certificate expiring date. -->
+            <pin digest="SHA-256">Pin SHA256</pin>
+        </pin-set>
+    </domain-config>
+
+</network-security-config>
