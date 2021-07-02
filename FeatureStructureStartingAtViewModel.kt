@@ -1,3 +1,7 @@
+import DoSomethingResult.SomethingFailed
+import DoSomethingResult.SomethingSucceeded
+import LoadSomethingResult.SomethingMissing
+import LoadSomethingResult.SomethingPresent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -32,9 +36,9 @@ class SomethingViewModel(
                     somethingRepository.doSomething()
 
             when(doSomethingResult) {
-                is DoSomethingResult.SomethingFailed -> {
+                is SomethingFailed -> {
                 }
-                is DoSomethingResult.SomethingSucceeded -> {
+                is SomethingSucceeded -> {
                 }
             }
         }
@@ -57,14 +61,14 @@ class SomethingRepository(
                 somethingService.loadSomething()
 
         return when(loadSomethingResult) {
-            is LoadSomethingResult.SomethingPresent -> {
+            is SomethingPresent -> {
                 somethingPersistence
                         .persistSomething(loadSomethingResult.something)
 
-                DoSomethingResult.SomethingSucceeded
+                SomethingSucceeded
             }
-            is LoadSomethingResult.SomethingMissing -> {
-                DoSomethingResult.SomethingFailed(loadSomethingResult.exception)
+            is SomethingMissing -> {
+                SomethingFailed(loadSomethingResult.exception)
             }
         }
     }
@@ -92,7 +96,7 @@ class SomethingService {
      */
     suspend fun loadSomething(): LoadSomethingResult =
             withContext(IO) {
-                LoadSomethingResult.SomethingPresent(Something())
+                SomethingPresent(Something())
             }
 }
 
