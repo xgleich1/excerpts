@@ -19,7 +19,9 @@ import org.hamcrest.Matchers.not
  * in onCreate/onStart/onResume. Espresso's IntentsTestRule
  * calls Intents.init() too late to make this possible.
  */
-open class InitIntentsBeforeActivityLaunchedTestRule<T : Activity> : ActivityTestRule<T> {
+open class InitIntentsBeforeActivityLaunchedTestRule<T : Activity>
+    : ActivityTestRule<T> {
+    
     constructor(activityClass: Class<T>)
             : super(activityClass)
 
