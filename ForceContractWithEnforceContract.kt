@@ -1,5 +1,3 @@
-package com.dg.eqs.util.rules
-
 import org.junit.Test
 
 /**
