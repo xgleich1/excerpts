@@ -44,7 +44,7 @@ fun should_concurrently_add_items_to_a_list() {
      * The test crashes when using just a mutable list with
      * ArrayIndexOutOfBoundsException: length=23; index=464
      */
-//    val synchronizedList = mutableListOf<Int>()
+    // val list = mutableListOf<Int>()
 
     // WHEN
     executeConcurrently(threadCount = 500) {
