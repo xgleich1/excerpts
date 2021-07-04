@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.dg.eqs.R
-import com.dg.eqs.base.observation.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
